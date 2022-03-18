@@ -37,6 +37,10 @@ APP_PASSPORT = 1
 APP_MUSIC_PLAYER = 1
 APP_SNAKE_GAME = 1
 
+APP_SCENED = 1
+APP_TEST = 1
+
+
 # Debug
 APP_ACCESSOR = 1
 APP_BLINK = 1
@@ -216,6 +220,22 @@ ifeq ($(APP_SNAKE_GAME), 1)
 CFLAGS		+= -DAPP_SNAKE_GAME
 SRV_GUI		= 1
 endif
+
+APP_SCENED ?= 0
+ifeq ($(APP_SCENED), 1)
+CFLAGS		+= -DAPP_SCENED
+SRV_GUI		= 1
+endif
+
+APP_TEST ?= 0
+ifeq ($(APP_TEST), 1)
+CFLAGS		+= -DAPP_TEST
+SRV_GUI		= 1
+endif
+
+
+
+
 
 APP_IBUTTON ?= 0
 ifeq ($(APP_IBUTTON), 1)
